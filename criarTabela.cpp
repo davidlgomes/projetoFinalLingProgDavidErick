@@ -1,5 +1,5 @@
 #include <iostream>
-#include <sqlite3.h>
+#include "./sqlite3/sqlite-autoconf-3360000/sqlite3.h"
 #include "criarTabela.h"
 
 using namespace std;

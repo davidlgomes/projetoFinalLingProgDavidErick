@@ -12,6 +12,6 @@ struct Componente {
     string dataCompra;
     int estoqueId;
 };
-istream& operator>>(istream& input, Componente& componente);
+//istream& operator>>(istream& input, Componente& componente);
 
 #endif // COMPONENTE_H

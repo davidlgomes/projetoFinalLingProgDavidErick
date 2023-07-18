@@ -20,6 +20,7 @@ int main(){
         switch (opcoesMenu) {
             case 1:
                 cout <<"1 - Pesquisar Item do estoque"<<endl<<endl;
+                crud.pesquisarComponente();
                 break;
             case 2:
                 cout <<"2 - Adicionar componente ao estoque"<<endl<<endl;
@@ -27,9 +28,11 @@ int main(){
                 break;
             case 3:
                 cout <<"3 - Atualizar um componente do estoque "<<endl<<endl;
+                crud.atualizarComponente();
                 break;
             case 4:
                 cout <<"4 - Remover um componente do estoque"<<endl<<endl;
+                crud.excluirComponente();
                 break;
             case 5:
                 cout <<"5 - Help "<<endl<<endl;
