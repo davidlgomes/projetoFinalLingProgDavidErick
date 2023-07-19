@@ -37,7 +37,7 @@ int Crud::adicionarComponente() {
     cin >> quantidade;
     cout << "Informe o ID do fornecedor: ";
     cin >> fornecedorId;
-    cout << "Informe a data de compra do componente: ";
+    cout << "Informe a data de compra do componente no formato AAAA-MM-DD: ";
     cin >> dataCompra;
     cout << "Informe o ID do estoque: ";
     cin >> estoqueId;
@@ -246,14 +246,14 @@ int Crud:: excluirComponente(){
 
 int Crud::pesquisarComponente() {
     int idComponente;
-    int escolha;
+
     // Solicita ao usuário o ID do componente a ser buscado
     cout << "Informe o ID do componente pelo qual você deseja pesquisar: ";
     cin >> idComponente;
 
     // Abre a conexão com o banco de dados
     sqlite3* db;
-    char* errMsg = nullptr;
+    //char* errMsg = nullptr;
     int rc = sqlite3_open("banco_de_dados.db", &db);
 
     if (rc != SQLITE_OK) {
@@ -306,35 +306,6 @@ int Crud::pesquisarComponente() {
     // Fecha a conexão com o banco de dados
     sqlite3_finalize(stmt);
     sqlite3_close(db);
-    bool saida = false;
-
-    while(saida==false){
-        
-        cout<<endl<<"Deseja realizar alguma dessas funções?"<<endl;
-        cout <<"1 - Adicionar componente ao estoque"<<endl;
-        cout <<"2 - Atualizar um componente do estoque "<<endl;
-        cout <<"3 - Remover um componente do estoque"<<endl;
-        cout <<"4 - Para sair."<<endl;
-        cin >> escolha;
-    }
-    switch (escolha)
-    {
-    case 1:
-        adicionarComponente();
-        break;
-    case 2:
-        atualizarComponente();
-        break;
-    case 3:
-        excluirComponente();
-        break;
-    case 4:
-        cout<<endl;
-        saida=true;
-        break;
-    default:
-        cout<<"Digite algum valor válido."<<endl;
-        break;
-    }
+    
     return 0;
 }
